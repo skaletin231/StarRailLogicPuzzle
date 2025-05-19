@@ -1,0 +1,30 @@
+#Grid Layout-container {
+	
+}
+
+.Parent {
+	margin-left: 20px;
+	margin-right: 20px;
+	flex-grow: 1;
+}
+
+.GuessAndDataContainer {
+	flex-basis: 10%;
+	min-height: 120px;
+}
+
+.AllCharacterContainers {
+	flex-grow: 9;
+	color: Black;
+}
+
+.Row {
+	flex-direction: row;
+	justify-content: space-between;
+	flex-grow: 1;
+}
+
+.Character {
+	background-color: #b0ffe6;
+	align-self: center;
+}
