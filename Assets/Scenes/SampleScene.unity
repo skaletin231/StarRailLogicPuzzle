@@ -1093,7 +1093,7 @@ MonoBehaviour:
   areaForSpawningCharactersContainer: {fileID: 586307664}
   areaForSpawninNumbers: {fileID: 1126499203}
   areaForSpawninLetter: {fileID: 8691817307876065710}
-  minWidth: 40
+  minWidth: 280
   scrollbarWidth: 20
   characterPanelPrefab: {fileID: 2682943087020142409, guid: 4693940a3306c704eb6afacc270e6b57, type: 3}
   rowsOfData:
@@ -1763,7 +1763,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.5
 --- !u!222 &1362060891
 CanvasRenderer:
   m_ObjectHideFlags: 0
