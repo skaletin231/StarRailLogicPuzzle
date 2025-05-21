@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,6 +59,8 @@ public class AddCharactersToScreen : MonoBehaviour
             GridManager.GetGridManager().SetEntireRow(i-1,SpawnARow(row, i));
             i++;
         }
+
+        ScoreTracker.GetScoreTracker().AddCharactersToList(uiToCharacter.Keys.ToList());
 
         for (int ascii = 65; ascii < 65 + rowsOfData[0].charactersInThisRow.Length; ascii++)
         {

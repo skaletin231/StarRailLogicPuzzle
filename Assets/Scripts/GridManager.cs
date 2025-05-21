@@ -32,7 +32,6 @@ public class GridManager
     public void SetPosition(int x, int y, CharacterClickInteractor character)
     {
         CharacterClickInteractorGrid[x, y] = character;
-        Debug.Log($"Just set position ({x+1},{y+1}) to {character.name}");
     }
 
     public CharacterClickInteractor GetCharacterAtPosition(int x, int y)
