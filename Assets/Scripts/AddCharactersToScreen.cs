@@ -32,7 +32,10 @@ public class AddCharactersToScreen : MonoBehaviour
     Dictionary<CharacterClickInteractor, CharacterData> uiToCharacter = new();
     Dictionary<string, List<CharacterData>> possibleAnswersToData = new();
 
+    HashSet<CharacterClickInteractor> notFoundYet = new();
+
     CharacterClickInteractor previousClickedObject = null;
+
     private void Start()
     {
         charactersGridLayoutGroup = areaForSpawningCharacters.GetComponent<GridLayoutGroup>();
@@ -62,6 +65,14 @@ public class AddCharactersToScreen : MonoBehaviour
             text.GetComponentInChildren<TextMeshProUGUI>().text = $"{(char)ascii}";
         }
 
+        GameOverDetector.GetGameOverDetection().GameEnded += () =>
+        {
+            inputField.interactable = false;
+            hintButton.interactable = false;
+
+            inputField.text = "";
+            HighlightHandler.GetHighlightHandler().EndGame();
+        };
     }
 
     private void Update()
@@ -100,14 +111,16 @@ public class AddCharactersToScreen : MonoBehaviour
 
         if (possibleAnswersToData[updatedNewText].Contains(characterBeingGuessed))
         {
-            Debug.Log("Correct Guess");
             previousClickedObject.RevealPaenl();
+
+            //This correctly tracks how many are left to find. Now i just need to use this to make a game over screen
+            notFoundYet.Remove(previousClickedObject);
             HighlightHandler.GetHighlightHandler().RemoveHints();
             inputField.text = "";
-        }
+        } 
         else
         {
-            Debug.Log("Wrong Guess");
+            GameOverDetector.GetGameOverDetection().EndGame();
         }
     }
 
@@ -135,17 +148,19 @@ public class AddCharactersToScreen : MonoBehaviour
 
         if (character.onByDefault)
             newUICharacter.RevealPaenl();
+        else
+            notFoundYet.Add(newUICharacter);
 
-        foreach (string answer in character.character.acceptableAnswers)
-        {
-            string updatedAnswer = answer.ToLower().Trim();
-            if (!possibleAnswersToData.ContainsKey(updatedAnswer))
+            foreach (string answer in character.character.acceptableAnswers)
             {
-                possibleAnswersToData[updatedAnswer] = new List<CharacterData>();
-            }
+                string updatedAnswer = answer.ToLower().Trim();
+                if (!possibleAnswersToData.ContainsKey(updatedAnswer))
+                {
+                    possibleAnswersToData[updatedAnswer] = new List<CharacterData>();
+                }
 
-            possibleAnswersToData[updatedAnswer].Add(character.character);       
-        }
+                possibleAnswersToData[updatedAnswer].Add(character.character);
+            }
 
         newUICharacter.OnPanelClicked += () => {
             HighlightClickedCharacter(newUICharacter);
@@ -166,12 +181,6 @@ public class AddCharactersToScreen : MonoBehaviour
 
         return newUICharacter;
     }
-
-/*    public void SelectCharacter(CharacterClickInteractor newUICharacter)
-    {
-        HighlightClickedCharacter(newUICharacter);
-        previousClickedObject = newUICharacter;
-    }*/
 
     void HighlightClickedCharacter(CharacterClickInteractor newCharacter)
     {

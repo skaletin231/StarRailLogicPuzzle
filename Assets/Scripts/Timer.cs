@@ -2,19 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Timer : MonoBehaviour
 {
     TextMeshProUGUI timeText;
     float time = 0;
+    bool keepTime = true;
 
     private void Awake()
     {
         timeText = GetComponent<TextMeshProUGUI>();
+        GameOverDetector.GetGameOverDetection().GameEnded += GameEnded;
     }
 
     private void Update()
     {
+        if (!keepTime)
+        {
+            return;
+        }
+
         time += Time.deltaTime;
 
         int minutes = Mathf.FloorToInt(time / 60);
@@ -30,5 +38,10 @@ public class Timer : MonoBehaviour
         {
             timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
         }
+    }
+
+    private void GameEnded()
+    {
+        keepTime = false;
     }
 }
