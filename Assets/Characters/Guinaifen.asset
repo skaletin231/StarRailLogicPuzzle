@@ -17,4 +17,7 @@ MonoBehaviour:
     go check on Sushang in H2? She might be done playing Celestial Jade with Qingque.
   acceptableAnswers:
   - Guinaifen
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 2}
+    neededWithoutHighlight: []

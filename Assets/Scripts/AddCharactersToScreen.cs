@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 
 public class AddCharactersToScreen : MonoBehaviour
 {
+    [SerializeField] bool TestingMode = false;
     [Header("Spawn Location Settings")]
     [SerializeField] RectTransform areaForSpawningCharacters;
     [SerializeField] RectTransform areaForSpawningCharactersContainer;
@@ -51,7 +53,8 @@ public class AddCharactersToScreen : MonoBehaviour
         charactersGridLayoutGroup.constraintCount = rowsOfData[0].charactersInThisRow.Length;
 
         GridManager.GetGridManager().CreateGrid(rowsOfData[0].charactersInThisRow.Length, rowsOfData.Length);
-        hintButton.onClick.AddListener(() => HintData.GetHintData().CheckForHints(uiToCharacter));
+        //hintButton.onClick.AddListener(() => HintData.GetHintData().CheckForHints(uiToCharacter));
+        hintButton.onClick.AddListener(() => HintData.GetHintData().CheckForHints());
 
         int i = 1;
         foreach (var row in rowsOfData)
@@ -123,31 +126,41 @@ public class AddCharactersToScreen : MonoBehaviour
         } 
         else
         {
+            if (TestingMode)
+            {
+                return;
+            }
             GameOverDetector.GetGameOverDetection().EndGame();
         }
     }
 
-    CharacterClickInteractor[] SpawnARow(RowOfData rowToSpawn, int index)
+    CharacterClickInteractor[] SpawnARow(RowOfData rowToSpawn, int rowIndex)
     {
         CharacterClickInteractor[] test = new CharacterClickInteractor[rowToSpawn.charactersInThisRow.Length];
 
         int currentCharacterIndex = 0;
-        foreach (var character in rowToSpawn.charactersInThisRow)
+/*        foreach (var character in rowToSpawn.charactersInThisRow)
         {      
             test[currentCharacterIndex++] = SpawnASingleCharacter(character);
+        }*/
+
+        for (int columnIndex = 0; columnIndex < rowToSpawn.charactersInThisRow.Length;columnIndex++)
+        {
+            test[columnIndex] = SpawnASingleCharacter(rowToSpawn.charactersInThisRow[columnIndex], columnIndex, rowIndex);
         }
 
         GameObject text = GameObject.Instantiate(numbersPrefab, areaForSpawninNumbers.transform);
-        text.GetComponentInChildren<TextMeshProUGUI>().text = $"{index}";
+        text.GetComponentInChildren<TextMeshProUGUI>().text = $"{rowIndex}";
 
         return test;
     }
 
-    CharacterClickInteractor SpawnASingleCharacter(CharacterDataAndDefaultState character)
+    CharacterClickInteractor SpawnASingleCharacter(CharacterDataAndDefaultState character, int columnIndex, int rowIndex)
     {
         GameObject newUI = GameObject.Instantiate(characterPanelPrefab, areaForSpawningCharacters.transform);
         CharacterClickInteractor newUICharacter = newUI.GetComponent<CharacterClickInteractor>();
         uiToCharacter[newUICharacter] = character.character;
+        character.character.myLocation = newUICharacter;
 
         if (character.onByDefault)
             newUICharacter.RevealPaenl();
@@ -176,9 +189,13 @@ public class AddCharactersToScreen : MonoBehaviour
             {
                 text.text = character.character.characterName;
             }
-            else
+            else if (text.name == "Hint")
             {
                 text.text = character.character.hintText;
+            }
+            else
+            {
+                text.text = $"{(char)(65 + columnIndex)}{rowIndex}";
             }
         }
 

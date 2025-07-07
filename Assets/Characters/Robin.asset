@@ -18,4 +18,8 @@ MonoBehaviour:
     followed them. Wonder if he managed to find him?
   acceptableAnswers:
   - Robin
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 7}
+    - {x: 6, y: 8}
+    neededWithoutHighlight: []

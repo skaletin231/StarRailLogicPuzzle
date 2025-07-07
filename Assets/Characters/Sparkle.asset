@@ -19,4 +19,8 @@ MonoBehaviour:
   acceptableAnswers:
   - Sparkle
   - Robin
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 7}
+    - {x: 2, y: 4}
+    neededWithoutHighlight: []

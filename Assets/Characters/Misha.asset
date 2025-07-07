@@ -16,4 +16,8 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Misha
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 7, y: 1}
+    - {x: 6, y: 2}
+    neededWithoutHighlight: []

@@ -21,10 +21,6 @@ MonoBehaviour:
   - Herta
   hint:
   - neededAndHighlight:
-    - {x: 0, y: 0}
-    neededWithoutHighlight:
-    - {x: 0, y: 0}
-  - neededAndHighlight:
-    - {x: 0, y: 0}
-    neededWithoutHighlight:
-    - {x: 0, y: 0}
+    - {x: 4, y: 5}
+    - {x: 2, y: 2}
+    neededWithoutHighlight: []

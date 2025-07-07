@@ -18,4 +18,8 @@ MonoBehaviour:
     somewhere on my left
   acceptableAnswers:
   - Silver Wolf
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 8, y: 5}
+    - {x: 5, y: 3}
+    neededWithoutHighlight: []

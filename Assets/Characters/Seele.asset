@@ -17,4 +17,9 @@ MonoBehaviour:
     follow her to make sure she's not giving her a hard time again.
   acceptableAnswers:
   - Seele
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 4, y: 7}
+    neededWithoutHighlight:
+    - {x: 1, y: 9}
+    - {x: 2, y: 8}

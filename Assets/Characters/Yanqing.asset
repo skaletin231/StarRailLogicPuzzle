@@ -17,4 +17,9 @@ MonoBehaviour:
     to do...
   acceptableAnswers:
   - Yanqing
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 3}
+    - {x: 1, y: 4}
+    - {x: 2, y: 4}
+    neededWithoutHighlight: []

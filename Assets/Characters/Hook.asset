@@ -17,4 +17,8 @@ MonoBehaviour:
     just around my height. But wait, I thought I saw two more of her earlier...?
   acceptableAnswers:
   - Hook
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 2, y: 3}
+    - {x: 4, y: 5}
+    neededWithoutHighlight: []

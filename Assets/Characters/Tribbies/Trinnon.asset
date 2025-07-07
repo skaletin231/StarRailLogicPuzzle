@@ -18,4 +18,8 @@ MonoBehaviour:
   acceptableAnswers:
   - Trinnon
   - Tribbie
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 5, y: 4}
+    neededWithoutHighlight:
+    - {x: 4, y: 1}

@@ -16,4 +16,8 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Argenti
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 6, y: 7}
+    neededWithoutHighlight:
+    - {x: 7, y: 7}

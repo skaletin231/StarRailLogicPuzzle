@@ -17,4 +17,7 @@ MonoBehaviour:
     compare to me.
   acceptableAnswers:
   - Cipher
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 7, y: 4}
+    neededWithoutHighlight: []

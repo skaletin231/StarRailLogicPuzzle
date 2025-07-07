@@ -17,4 +17,12 @@ MonoBehaviour:
     this spot from the empty square on my right?
   acceptableAnswers:
   - Gepard
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 4, y: 6}
+    - {x: 2, y: 9}
+    - {x: 7, y: 9}
+    neededWithoutHighlight:
+    - {x: 1, y: 9}
+    - {x: 1, y: 8}
+    - {x: 5, y: 1}

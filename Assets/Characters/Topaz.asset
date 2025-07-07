@@ -18,4 +18,9 @@ MonoBehaviour:
     all the other Belobogians in her column.
   acceptableAnswers:
   - Topaz
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 6, y: 5}
+    - {x: 2, y: 4}
+    neededWithoutHighlight:
+    - {x: 2, y: 8}

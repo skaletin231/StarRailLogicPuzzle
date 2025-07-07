@@ -16,4 +16,7 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Fu Xuan
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 7, y: 2}
+    neededWithoutHighlight: []

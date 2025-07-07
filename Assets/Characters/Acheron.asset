@@ -20,6 +20,6 @@ MonoBehaviour:
   - Acheron
   hint:
   - neededAndHighlight:
-    - {x: 1, y: 1}
-    - {x: 2, y: 1}
+    - {x: 2, y: 5}
+    - {x: 2, y: 2}
     neededWithoutHighlight: []

@@ -18,4 +18,8 @@ MonoBehaviour:
     all the merchandise she could carry.
   acceptableAnswers:
   - Pela
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 7}
+    - {x: 4, y: 3}
+    neededWithoutHighlight: []

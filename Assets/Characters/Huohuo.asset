@@ -16,4 +16,9 @@ MonoBehaviour:
   hintText: There are no foxians to my right
   acceptableAnswers:
   - Huohuo
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 2}
+    - {x: 5, y: 4}
+    neededWithoutHighlight:
+    - {x: 3, y: 2}

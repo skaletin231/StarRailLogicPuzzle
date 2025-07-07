@@ -17,4 +17,15 @@ MonoBehaviour:
     a pet pig coming back from the overworld. They're probably still together.
   acceptableAnswers:
   - Luka
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 5}
+    - {x: 8, y: 8}
+    neededWithoutHighlight:
+    - {x: 4, y: 9}
+    - {x: 4, y: 6}
+    - {x: 4, y: 5}
+    - {x: 4, y: 4}
+    - {x: 4, y: 3}
+    - {x: 4, y: 2}
+    - {x: 4, y: 1}

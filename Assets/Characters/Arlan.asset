@@ -16,4 +16,9 @@ MonoBehaviour:
   hintText: Boothill and Argenti on my right in the same row
   acceptableAnswers:
   - Arlan
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 5, y: 9}
+    - {x: 4, y: 5}
+    neededWithoutHighlight:
+    - {x: 6, y: 6}

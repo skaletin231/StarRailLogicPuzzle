@@ -16,3 +16,7 @@ MonoBehaviour:
   hintText: Lie
   acceptableAnswers:
   - Herta
+  hint:
+  - neededAndHighlight:
+    - {x: 4, y: 5}
+    neededWithoutHighlight: []

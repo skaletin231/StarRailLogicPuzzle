@@ -19,4 +19,7 @@ MonoBehaviour:
     station crew are adjacent to just 1 puppet'
   acceptableAnswers:
   - Asta
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 8}
+    neededWithoutHighlight: []

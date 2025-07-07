@@ -17,4 +17,9 @@ MonoBehaviour:
     Every character that drains their own HP is in one of the bottom three rows.
   acceptableAnswers:
   - Blade
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 4, y: 9}
+    - {x: 5, y: 3}
+    - {x: 8, y: 8}
+    neededWithoutHighlight: []

@@ -18,4 +18,7 @@ MonoBehaviour:
     in judges of the Ten-Lords Commission?
   acceptableAnswers:
   - Yunli
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 2}
+    neededWithoutHighlight: []

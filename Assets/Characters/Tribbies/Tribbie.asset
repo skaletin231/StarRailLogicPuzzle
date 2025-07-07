@@ -16,4 +16,7 @@ MonoBehaviour:
   hintText: Hmm, I wonder why Agy went all the way over in that corner?
   acceptableAnswers:
   - Tribbie
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 5, y: 4}
+    neededWithoutHighlight: []

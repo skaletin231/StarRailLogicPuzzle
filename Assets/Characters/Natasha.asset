@@ -17,4 +17,8 @@ MonoBehaviour:
     and is getting a piggyback ride from a redhead lady there.
   acceptableAnswers:
   - Natasha
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 3}
+    - {x: 1, y: 8}
+    neededWithoutHighlight: []

@@ -16,4 +16,7 @@ MonoBehaviour:
   hintText: I heard all the confirmed eminators are in collumn F
   acceptableAnswers:
   - Jing Yuan
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 4}
+    neededWithoutHighlight: []

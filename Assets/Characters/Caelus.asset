@@ -17,4 +17,7 @@ MonoBehaviour:
     Bros Only" party in my row! Wow, there are so many of us...
   acceptableAnswers:
   - Caelus
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 1}
+    neededWithoutHighlight: []

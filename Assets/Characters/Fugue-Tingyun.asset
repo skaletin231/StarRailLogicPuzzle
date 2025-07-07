@@ -17,4 +17,8 @@ MonoBehaviour:
   acceptableAnswers:
   - Fugue
   - Tingyun
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 3}
+    - {x: 4, y: 1}
+    neededWithoutHighlight: []

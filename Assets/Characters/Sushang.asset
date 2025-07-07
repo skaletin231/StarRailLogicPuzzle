@@ -17,4 +17,7 @@ MonoBehaviour:
     dressed like some kind of dinosaur!
   acceptableAnswers:
   - Sushang
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 4, y: 2}
+    neededWithoutHighlight: []

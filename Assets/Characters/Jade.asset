@@ -17,4 +17,8 @@ MonoBehaviour:
     to at least one other Stellaron Hunter.
   acceptableAnswers:
   - Jade
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 2, y: 8}
+    - {x: 6, y: 5}
+    neededWithoutHighlight: []

@@ -9,6 +9,7 @@ public class CharacterData : ScriptableObject
     public string hintText;
     public string[] acceptableAnswers;
     public Hint[] hint;
+    [NonSerialized] public CharacterClickInteractor myLocation = null;
 
     public void SetAcceptableAnswers()
     {

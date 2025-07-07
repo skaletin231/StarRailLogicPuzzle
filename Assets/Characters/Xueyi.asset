@@ -16,4 +16,7 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Xueyi
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 2}
+    neededWithoutHighlight: []

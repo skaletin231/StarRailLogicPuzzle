@@ -16,4 +16,9 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Boothill
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 4, y: 3}
+    - {x: 6, y: 3}
+    - {x: 8, y: 8}
+    neededWithoutHighlight: []

@@ -17,4 +17,8 @@ MonoBehaviour:
     except for the ones in C7 and F7. Oh well, at least Xueyi is pretty close
   acceptableAnswers:
   - Hanya
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 2}
+    - {x: 1, y: 8}
+    neededWithoutHighlight: []

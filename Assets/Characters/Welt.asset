@@ -17,4 +17,8 @@ MonoBehaviour:
     trash again. They'll find Himeko in Row 3, which is full of tall women like her.
   acceptableAnswers:
   - Welt
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 8, y: 8}
+    - {x: 7, y: 9}
+    neededWithoutHighlight: []

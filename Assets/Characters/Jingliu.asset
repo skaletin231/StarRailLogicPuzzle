@@ -16,4 +16,7 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Jingliu
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 7, y: 8}
+    neededWithoutHighlight: []

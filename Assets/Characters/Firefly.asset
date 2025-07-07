@@ -17,4 +17,8 @@ MonoBehaviour:
     I think she is in your column somewhere
   acceptableAnswers:
   - Firefly
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 8, y: 9}
+    neededWithoutHighlight:
+    - {x: 7, y: 9}

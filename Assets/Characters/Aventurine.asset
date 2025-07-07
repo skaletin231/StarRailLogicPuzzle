@@ -17,4 +17,8 @@ MonoBehaviour:
     heard you were looking for Jade? She's either in E3 or E9 - wanna bet?
   acceptableAnswers:
   - Aventurine
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 2, y: 4}
+    - {x: 8, y: 8}
+    neededWithoutHighlight: []

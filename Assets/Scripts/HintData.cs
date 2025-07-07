@@ -4,24 +4,45 @@ using UnityEngine;
 
 //The way this will work: Every character has a list of squares needed to reveeal it
 //This will check those sqaures and see if they are revealed
-public class HintData
+public class HintData : MonoBehaviour
 {
-    private static HintData Instance;
+     private static HintData Instance;
 
-    private HintData() { }
+     private HintData() { }
 
-    public static HintData GetHintData()
+     public static HintData GetHintData()
+     {
+        return Instance;
+     }
+
+     //List<Hint> hintsToGive = new();
+
+    [SerializeField] List<CharacterData> hintOrder = new List<CharacterData>();
+
+    Queue<CharacterData> hintQueue = new Queue<CharacterData>();
+
+    private void Awake()
     {
-        return Instance ??= new HintData();
+        Instance = this;
+        foreach (CharacterData character in hintOrder)
+        {
+            hintQueue.Enqueue(character);
+        }
     }
 
-    List<Hint> hintsToGive = new();
-
-    public void CheckForHints(Dictionary<CharacterClickInteractor, CharacterData> locationsToCharacters)
+    //Dictionary<CharacterClickInteractor, CharacterData> locationsToCharacters
+    public void CheckForHints()
     {
-        hintsToGive.Clear();
         HighlightHandler.GetHighlightHandler().RemoveHighlightsAndHints();
-        foreach (CharacterClickInteractor location in locationsToCharacters.Keys.Where(x => !x.revealedAlready))
+
+        while (hintQueue.Peek().myLocation.revealedAlready) //remove all spots already revealed
+        {
+            hintQueue.Dequeue();
+        }
+
+        //hintsToGive.Clear();
+
+        /*foreach (CharacterClickInteractor location in locationsToCharacters.Keys.Where(x => !x.revealedAlready))
         {
             CheckSingleCharacter(locationsToCharacters, locationsToCharacters[location]);
             if (hintsToGive.Count > 0)
@@ -29,7 +50,7 @@ public class HintData
         }
 
         if (hintsToGive.Count < 1)
-            return;
+            return;*/
 
 
         MakeHintsAppear();
@@ -37,7 +58,7 @@ public class HintData
 
     private void MakeHintsAppear()
     {
-        foreach (Hint hint in hintsToGive)
+        foreach (Hint hint in hintQueue.Peek().hint)
         {
             foreach (Vector2Int gridLocation in hint.neededAndHighlight)
             {
@@ -47,7 +68,7 @@ public class HintData
         }
     }
 
-    private void CheckSingleCharacter(Dictionary<CharacterClickInteractor, CharacterData> locationsToCharacters, CharacterData character)
+    /*private void CheckSingleCharacter(Dictionary<CharacterClickInteractor, CharacterData> locationsToCharacters, CharacterData character)
     {
         foreach (Hint hint in character.hint)
         {
@@ -73,7 +94,7 @@ public class HintData
                 hintsToGive.Add(hint);
             }
         }
-    }
+    }*/
 }
 
 //IDEA: When you click "Hint", it should look through all hints for sections not already unlocked and reveal the first valid hint it findes (hint for an unreveled slot

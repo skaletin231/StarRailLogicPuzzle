@@ -17,4 +17,9 @@ MonoBehaviour:
     anniversary waifu"...?
   acceptableAnswers:
   - Castorice
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 1, y: 9}
+    neededWithoutHighlight:
+    - {x: 8, y: 8}
+    - {x: 7, y: 9}

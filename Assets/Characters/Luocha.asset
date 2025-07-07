@@ -16,4 +16,8 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Luocha
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 8, y: 8}
+    - {x: 5, y: 8}
+    neededWithoutHighlight: []

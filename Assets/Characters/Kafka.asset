@@ -16,4 +16,7 @@ MonoBehaviour:
   hintText: 
   acceptableAnswers:
   - Kafka
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 2, y: 5}
+    neededWithoutHighlight: []

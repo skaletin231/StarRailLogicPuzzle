@@ -19,4 +19,7 @@ MonoBehaviour:
 '
   acceptableAnswers:
   - Hyacine
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 8, y: 3}
+    neededWithoutHighlight: []

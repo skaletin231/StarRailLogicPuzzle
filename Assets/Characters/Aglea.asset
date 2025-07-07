@@ -17,4 +17,8 @@ MonoBehaviour:
     she can hold hands with everyone around her.
   acceptableAnswers:
   - Aglea
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 3, y: 1}
+    - {x: 5, y: 1}
+    neededWithoutHighlight: []

@@ -1233,7 +1233,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 833987000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1652415891}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: Menu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &833987000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,6 +1419,7 @@ GameObject:
   - component: {fileID: 1101203857}
   - component: {fileID: 1101203856}
   - component: {fileID: 1101203861}
+  - component: {fileID: 1101203862}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1426,6 +1439,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64c837c186cde044ab9c1fe60a14db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestingMode: 0
   areaForSpawningCharacters: {fileID: 897105625}
   areaForSpawningCharactersContainer: {fileID: 586307664}
   areaForSpawninNumbers: {fileID: 1126499203}
@@ -1685,6 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d64c837c186cde044ab9c1fe60a14db6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TestingMode: 0
   areaForSpawningCharacters: {fileID: 897105625}
   areaForSpawningCharactersContainer: {fileID: 586307664}
   areaForSpawninNumbers: {fileID: 1126499203}
@@ -1732,6 +1747,90 @@ MonoBehaviour:
   numbersPrefab: {fileID: 6125161038734266167, guid: 7f4785d662423a440abd1d909d19d5c2, type: 3}
   inputField: {fileID: 1264677120}
   hintButton: {fileID: 1781326369}
+--- !u!114 &1101203862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1101203855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e101897e17a1640b982a9a0189973e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hintOrder:
+  - {fileID: 11400000, guid: db73c02c2c0e6f14f88fcbab791490d9, type: 2}
+  - {fileID: 11400000, guid: ebde5d68bdcb2c34c8a9b53ae211e9d8, type: 2}
+  - {fileID: 11400000, guid: f9e10abaa33c8f941af918e9fec5df9e, type: 2}
+  - {fileID: 11400000, guid: f70d038b4441a1c49b2e3881f9ee728e, type: 2}
+  - {fileID: 11400000, guid: 61df5c108251d7e44b5792d3e46895ed, type: 2}
+  - {fileID: 11400000, guid: aef0ad290799860498730e39cb18b13b, type: 2}
+  - {fileID: 11400000, guid: 1abb6ec225fae7a43b6a75867dc29d8f, type: 2}
+  - {fileID: 11400000, guid: 82ef89d84ff2e2a4bb96961b4aedeb36, type: 2}
+  - {fileID: 11400000, guid: 99c0f07ab81479c45af73856cdd6e664, type: 2}
+  - {fileID: 11400000, guid: df50ef77a0b62234a964728a2274b9d6, type: 2}
+  - {fileID: 11400000, guid: 80cccb512f99fc545981c75c0aefef22, type: 2}
+  - {fileID: 11400000, guid: 70541397887a20745a96724832034710, type: 2}
+  - {fileID: 11400000, guid: c1d51df62c3242f46bd4085dabc73bab, type: 2}
+  - {fileID: 11400000, guid: 0a497157923045e48a3c481b132b2050, type: 2}
+  - {fileID: 11400000, guid: f22fe087d3fcb074e976d168f79eceb9, type: 2}
+  - {fileID: 11400000, guid: 05b99f85f2f66bc4aa420758f6995c3b, type: 2}
+  - {fileID: 11400000, guid: 7623a91eef992804d9edc42a2a9377c9, type: 2}
+  - {fileID: 11400000, guid: e143c30dbe378474f9b0455e6d57821f, type: 2}
+  - {fileID: 11400000, guid: 043fecb6383967949b3f8076fdaffd3c, type: 2}
+  - {fileID: 11400000, guid: 43c04aefdb438544bbde06e8eb49b400, type: 2}
+  - {fileID: 11400000, guid: 7a097d8685241814aa144fd6d37910de, type: 2}
+  - {fileID: 11400000, guid: b41bafd9a5c5eac4eaff2972e47fc745, type: 2}
+  - {fileID: 11400000, guid: 5ead4e93510111748937f89ba2b7e341, type: 2}
+  - {fileID: 11400000, guid: 0552fd51b16451a4cb7552b1f998dd99, type: 2}
+  - {fileID: 11400000, guid: 67adbcb36ed0db9419499eb7a474be8d, type: 2}
+  - {fileID: 11400000, guid: 8a80be466b7d9c241a7068517ede44e0, type: 2}
+  - {fileID: 11400000, guid: 2ae8bf11603fd6940988dae5bd80cc3a, type: 2}
+  - {fileID: 11400000, guid: 7ff5ce42ec1685545b5f7595309bb0ad, type: 2}
+  - {fileID: 11400000, guid: 3d72cd1b285ee2242a5dcb130091d3ca, type: 2}
+  - {fileID: 11400000, guid: 3bffe7a192fcb0944a73ff575c8abd37, type: 2}
+  - {fileID: 11400000, guid: b696dcf61fdc4e3478543a7df4faf8cc, type: 2}
+  - {fileID: 11400000, guid: 5fb1c3d85e0abec4590bdc94360d0baf, type: 2}
+  - {fileID: 11400000, guid: e8738051a4c94ce46ac34e6766ced152, type: 2}
+  - {fileID: 11400000, guid: 2604e64e840307d4eb871af6e2c001f3, type: 2}
+  - {fileID: 11400000, guid: 8cb0ca58bc8f0da45a02997f9d37bf79, type: 2}
+  - {fileID: 11400000, guid: 75c1d657f7b546140891cebd497dbde1, type: 2}
+  - {fileID: 11400000, guid: 2d50d8bb00a2f054da2c38288c24c909, type: 2}
+  - {fileID: 11400000, guid: 8e39d6676c8c1fc4480cf2f05310aef2, type: 2}
+  - {fileID: 11400000, guid: e60245d7f83baf44aa5dff3c2b795889, type: 2}
+  - {fileID: 11400000, guid: 6515932c58f1af34bbf58236a65db97c, type: 2}
+  - {fileID: 11400000, guid: 1776f5a2dff96204a9c7806fb8adc384, type: 2}
+  - {fileID: 11400000, guid: 999c5674b67265f47b22104b17f3e215, type: 2}
+  - {fileID: 11400000, guid: 9de905c1b38c5864dbd46697285c1669, type: 2}
+  - {fileID: 11400000, guid: 8c29f6e66b1e3d14d9f4a45242250a13, type: 2}
+  - {fileID: 11400000, guid: 674bcd972a116444686c5e37dee6cf30, type: 2}
+  - {fileID: 11400000, guid: 513aebf90988a744e8892906392a09c5, type: 2}
+  - {fileID: 11400000, guid: 46fca863106d3e34b8b7f0442591c69a, type: 2}
+  - {fileID: 11400000, guid: 5388b885244f9f746a7ee422ef1c37bc, type: 2}
+  - {fileID: 11400000, guid: d0756489356bc33469405635a5c41efa, type: 2}
+  - {fileID: 11400000, guid: b300c49961f8e9d42a396dbe01d40a39, type: 2}
+  - {fileID: 11400000, guid: a6b998b19cd13474c8b06122d9792a2c, type: 2}
+  - {fileID: 11400000, guid: b3ce8c3aff76d0942b9f65965ecbea1d, type: 2}
+  - {fileID: 11400000, guid: 5883a9f17bc23f946a505817203a0f1b, type: 2}
+  - {fileID: 11400000, guid: 7a5abf3aec302d84bbf878b21f186f85, type: 2}
+  - {fileID: 11400000, guid: 790e7fd1b3a69424fb2d18600a703622, type: 2}
+  - {fileID: 11400000, guid: d4fa127a80f431c429b9c11adc5b7cd4, type: 2}
+  - {fileID: 11400000, guid: 8b503bd47460e6c46bb364e39acc48e0, type: 2}
+  - {fileID: 11400000, guid: baa9862700f0ca14e9e0d60d6775caf5, type: 2}
+  - {fileID: 11400000, guid: a0e2d120287978347b85c53eb8dcb744, type: 2}
+  - {fileID: 11400000, guid: 6cd5dce5449501a43a3fee06f1ef6c70, type: 2}
+  - {fileID: 11400000, guid: 94399a281e1b9db42ba89c86e4bf7db2, type: 2}
+  - {fileID: 11400000, guid: 52fdab788dcd0584ab2bed1adc7e5df2, type: 2}
+  - {fileID: 11400000, guid: a85ee4118d9ac5143b860daf7411d6e2, type: 2}
+  - {fileID: 11400000, guid: 7dacd1848c2e4004d92ccde14a0a32e2, type: 2}
+  - {fileID: 11400000, guid: f115b7ecd12e1f64da299e78a38afc02, type: 2}
+  - {fileID: 11400000, guid: 810d342d5d454554490f0ed1483630c0, type: 2}
+  - {fileID: 11400000, guid: 53ae530df1f4faa4aa1a66915c7fd0b5, type: 2}
+  - {fileID: 11400000, guid: 9a01cf0c455f1b04897d6aa79e8973e9, type: 2}
+  - {fileID: 11400000, guid: c763f05e6ab689448a6ba1881addaa41, type: 2}
+  - {fileID: 11400000, guid: ffc177ccd335da54ca4b84e02e979e81, type: 2}
+  - {fileID: 11400000, guid: ed8d8e14f2411fe4ead8078b510c6050, type: 2}
 --- !u!1 &1126499202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,6 +2683,8 @@ MonoBehaviour:
   scoreText: {fileID: 28355484}
   resetButton: {fileID: 2002951491}
   menuButton: {fileID: 833986999}
+  menuScene: ModeSelectionScreen
+  gameScene: QuizScene
 --- !u!1 &1715485414
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,7 +3407,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2002951492}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1652415891}
+        m_TargetAssemblyTypeName: GameOverScreen, Assembly-CSharp
+        m_MethodName: Restart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2002951492
 MonoBehaviour:
   m_ObjectHideFlags: 0

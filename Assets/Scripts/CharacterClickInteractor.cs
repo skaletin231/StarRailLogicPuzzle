@@ -8,6 +8,7 @@ public class CharacterClickInteractor : MonoBehaviour, IPointerClickHandler
 {
     public event Action OnPanelClicked;
     [SerializeField] GameObject characterInfoPanel;
+    [SerializeField] GameObject location;
     [HideInInspector] public bool revealedAlready;
     Image myBorder;
 
@@ -24,6 +25,7 @@ public class CharacterClickInteractor : MonoBehaviour, IPointerClickHandler
     public void RevealPaenl()
     {
         characterInfoPanel.SetActive(true);
+        location.SetActive(false);
         revealedAlready = true;
     }
 

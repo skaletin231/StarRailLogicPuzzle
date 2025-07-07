@@ -16,4 +16,9 @@ MonoBehaviour:
   hintText: The Imaginary Destruction characters are not next to each other
   acceptableAnswers:
   - Rappa
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 8, y: 8}
+    - {x: 6, y: 3}
+    neededWithoutHighlight:
+    - {x: 7, y: 7}

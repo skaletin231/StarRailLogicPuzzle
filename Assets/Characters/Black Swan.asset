@@ -17,4 +17,10 @@ MonoBehaviour:
     of them.
   acceptableAnswers:
   - Black Swan
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 2, y: 5}
+    neededWithoutHighlight:
+    - {x: 5, y: 3}
+    - {x: 6, y: 3}
+    - {x: 7, y: 3}

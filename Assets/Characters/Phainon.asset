@@ -17,4 +17,10 @@ MonoBehaviour:
     Mydei - I'm going to outlast you for sure this time!
   acceptableAnswers:
   - Phainon
-  hint: []
+  hint:
+  - neededAndHighlight:
+    - {x: 8, y: 8}
+    - {x: 8, y: 1}
+    neededWithoutHighlight:
+    - {x: 5, y: 8}
+    - {x: 5, y: 9}
