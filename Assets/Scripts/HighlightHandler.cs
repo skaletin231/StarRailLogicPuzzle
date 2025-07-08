@@ -15,6 +15,11 @@ public class HighlightHandler
         return Instance ??= new HighlightHandler();
     }
 
+    public static void ResetInstance()
+    {
+        Instance = null;
+    }
+
     //Add highlights
 
     public void AddObjectToHighlights(CharacterClickInteractor toHighlight)

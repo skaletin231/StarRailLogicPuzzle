@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class AddCharactersToScreen : MonoBehaviour
 {
-    [SerializeField] bool TestingMode = false;
+    [SerializeField] bool testingMode = false;
     [Header("Spawn Location Settings")]
     [SerializeField] RectTransform areaForSpawningCharacters;
     [SerializeField] RectTransform areaForSpawningCharactersContainer;
@@ -39,8 +39,16 @@ public class AddCharactersToScreen : MonoBehaviour
 
     CharacterClickInteractor previousClickedObject = null;
 
+    float currentHp = 0;
+
     private void Start()
     {
+        Debug.Log(GlobalSettings.GetLifeOption());
+        GridManager.ResetInstance();
+        GameOverDetector.ResetInstance();
+        HighlightHandler.ResetInstance();
+        ScoreTracker.ResetInstance();
+
         charactersGridLayoutGroup = areaForSpawningCharacters.GetComponent<GridLayoutGroup>();
         numbersGridLayoutGroup = areaForSpawninNumbers.GetComponent<GridLayoutGroup>();
         lettersGridLayoutGroup = areaForSpawninLetter.GetComponent<GridLayoutGroup>();
@@ -79,6 +87,15 @@ public class AddCharactersToScreen : MonoBehaviour
             inputField.text = "";
             HighlightHandler.GetHighlightHandler().EndGame();
         };
+
+        if (GlobalSettings.GetMaxLife() >= 0) //not infinite
+        {
+            currentHp = GlobalSettings.GetMaxLife();
+        }
+        else
+        {
+            testingMode = true;
+        }
     }
 
     private void Update()
@@ -123,26 +140,31 @@ public class AddCharactersToScreen : MonoBehaviour
             notFoundYet.Remove(previousClickedObject);
             HighlightHandler.GetHighlightHandler().RemoveHints();
             inputField.text = "";
+            if (notFoundYet.Count == 0)
+            {
+                GameOverDetector.GetGameOverDetection().EndGame();
+            }
         } 
         else
         {
-            if (TestingMode)
+            inputField.text = "";
+
+            if (testingMode)
             {
                 return;
             }
-            GameOverDetector.GetGameOverDetection().EndGame();
+
+            currentHp -= 1;
+            if (currentHp <= 0)
+            {
+                GameOverDetector.GetGameOverDetection().EndGame();
+            }
         }
     }
 
     CharacterClickInteractor[] SpawnARow(RowOfData rowToSpawn, int rowIndex)
     {
         CharacterClickInteractor[] test = new CharacterClickInteractor[rowToSpawn.charactersInThisRow.Length];
-
-        int currentCharacterIndex = 0;
-/*        foreach (var character in rowToSpawn.charactersInThisRow)
-        {      
-            test[currentCharacterIndex++] = SpawnASingleCharacter(character);
-        }*/
 
         for (int columnIndex = 0; columnIndex < rowToSpawn.charactersInThisRow.Length;columnIndex++)
         {

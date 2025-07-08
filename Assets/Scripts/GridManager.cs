@@ -15,6 +15,11 @@ public class GridManager
     {
         return Instance ??= new GridManager();
     }
+
+    public static void ResetInstance()
+    {
+        Instance = null;
+    }
     
     public void CreateGrid(int x, int y)
     {

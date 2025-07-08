@@ -14,6 +14,11 @@ public class GameOverDetector
         return Instance ??= new GameOverDetector();
     }
 
+    public static void ResetInstance()
+    {
+        Instance = null;
+    }
+
     public void EndGame()
     {
         GameEnded?.Invoke();

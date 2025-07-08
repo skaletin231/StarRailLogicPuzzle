@@ -14,6 +14,11 @@ public class ScoreTracker
         return Instance ??= new ScoreTracker();
     }
 
+    public static void ResetInstance()
+    {
+        Instance = null;
+    }
+
     List<CharacterClickInteractor> allCharacters = new();
 
     public int Score()

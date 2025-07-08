@@ -7,11 +7,29 @@ using System;
 public class Timer : MonoBehaviour
 {
     TextMeshProUGUI timeText;
-    float time = 0;
+    static float time = 0;
     bool keepTime = true;
+    static int hours;
+    static int minutes;
+    static int seconds;
+
+    public static float GetHours()
+    {
+        //Debug.Log(TimeSpan.FromSeconds(Mathf.Round(time)));
+        return hours;
+    }
+    public static float GetMinutes()
+    {
+        return minutes;
+    }
+    public static float GetSeconds()
+    {
+        return seconds;
+    }
 
     private void Awake()
     {
+        time = 0;
         timeText = GetComponent<TextMeshProUGUI>();
         GameOverDetector.GetGameOverDetection().GameEnded += GameEnded;
     }
@@ -25,12 +43,12 @@ public class Timer : MonoBehaviour
 
         time += Time.deltaTime;
 
-        int minutes = Mathf.FloorToInt(time / 60);
-        int seconds = Mathf.FloorToInt(time % 60);
+        minutes = Mathf.FloorToInt(time / 60);
+        seconds = Mathf.FloorToInt(time % 60);
 
         if (minutes > 59)
         {
-            int hours = Mathf.FloorToInt(time / 3600);
+            hours = Mathf.FloorToInt(time / 3600);
             minutes = minutes % 60;
             timeText.text = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
         }
